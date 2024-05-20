@@ -11,7 +11,7 @@
 		<mkdir dir="${WWW_DIR}" />
 	</target>
 	<target name="build" depends="init">
-		<javac srcdir="${SRC_DIR}" destdir="${BIN_DIR}">
+		<javac srcdir="${SRC_DIR}" destdir="${BIN_DIR}" includeantruntime="false">
 			<classpath>
 				<fileset dir="${LIB_DIR}">
 					<include name="*.jar" />

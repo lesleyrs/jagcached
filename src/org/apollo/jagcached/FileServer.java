@@ -76,10 +76,10 @@ public final class FileServer {
 			start("HTTP", new HttpPipelineFactory(handler, timer), NetworkConstants.HTTP_PORT);
 		} catch (Throwable t) {
 			logger.log(Level.SEVERE, "Failed to start HTTP service.", t);
-			logger.warning("HTTP will be unavailable. JAGGRAB will be used as a fallback by clients but this isn't reccomended!");
+			logger.warning("HTTP will be unavailable. JAGGRAB will be used as a fallback by clients but this isn't recommended!");
 		}
 		start("JAGGRAB", new JagGrabPipelineFactory(handler, timer), NetworkConstants.JAGGRAB_PORT);
-		start("ondemand", new OnDemandPipelineFactory(handler, timer), NetworkConstants.SERVICE_PORT);
+		// start("ondemand", new OnDemandPipelineFactory(handler, timer), NetworkConstants.SERVICE_PORT);
 		
 		logger.info("Ready for connections.");
 	}
