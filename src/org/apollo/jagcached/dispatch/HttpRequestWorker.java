@@ -74,6 +74,9 @@ public final class HttpRequestWorker extends RequestWorker<HttpRequest, Resource
 		
 		HttpResponse resp = new DefaultHttpResponse(request.getProtocolVersion(), status);
 		
+		resp.setHeader("Access-Control-Allow-Origin", "*");
+		// resp.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+		// resp.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 		resp.setHeader("Date", new Date());
 		resp.setHeader("Server", SERVER_IDENTIFIER);
 		resp.setHeader("Content-type", mimeType + ", charset=" + CHARACTER_SET.name());
